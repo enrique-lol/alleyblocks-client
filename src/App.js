@@ -4,13 +4,15 @@ import { v4 as uuid } from 'uuid'
 
 import AuthenticatedRoute from './components/AuthenticatedRoute/AuthenticatedRoute'
 import AutoDismissAlert from './components/AutoDismissAlert/AutoDismissAlert'
-import Header from './components/Header/Header'
+// import HeaderOne from './components/Header/HeaderOne'
+import HeaderTwo from './components/Header/HeaderTwo'
 import SignUp from './components/SignUp/SignUp'
 import SignIn from './components/SignIn/SignIn'
 import SignOut from './components/SignOut/SignOut'
 import ChangePassword from './components/ChangePassword/ChangePassword'
 // import ViewItem from './routes/ViewItem.js'
 import NewItem from './routes/NewItem.js'
+import HomeIndex from './routes/HomeIndex.js'
 // import UpdateItem from './routes/UpdateItem.js'
 
 class App extends Component {
@@ -44,7 +46,7 @@ class App extends Component {
 
     return (
       <Fragment>
-        <Header user={user} />
+        <HeaderTwo user={user} />
         {msgAlerts.map(msgAlert => (
           <AutoDismissAlert
             key={msgAlert.id}
@@ -56,6 +58,9 @@ class App extends Component {
           />
         ))}
         <main className="container">
+          <Route exact path='/' render={() => (
+            <HomeIndex msgAlert={this.msgAlert} />
+          )} />
           <Route path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
