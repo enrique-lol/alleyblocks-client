@@ -26,7 +26,7 @@ const alwaysOptions = (
 const HeaderTwo = ({ user }) => (
   <Navbar bg="dark" variant="dark">
     <Container>
-      <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+      <Navbar.Brand href="#/">Navbar</Navbar.Brand>
       <Nav className="me-auto">
         { user && <span className="navbar-text mr-2">Welcome, {user.email}</span>}
         { alwaysOptions }
