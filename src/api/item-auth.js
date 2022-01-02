@@ -10,7 +10,7 @@ export const itemIndex = (user) => {
 
 export const homeIndex = () => {
   return axios({
-    url: apiUrl + '/first14',
+    url: apiUrl + '/item',
     method: 'GET'
   })
 }
@@ -24,7 +24,7 @@ export const index14 = (user, loadCount) => {
 
 export const itemCreate = (item, user) => {
   return axios({
-    url: apiUrl + '/items',
+    url: apiUrl + '/item',
     method: 'POST',
     headers: {
       'Authorization': `Bearer ${user.token}`
@@ -34,14 +34,14 @@ export const itemCreate = (item, user) => {
 }
 export const getItem = (id) => {
   return axios({
-    url: apiUrl + '/items/' + id,
+    url: apiUrl + '/item/' + id,
     method: 'GET'
   })
 }
 
 export const itemUpdate = (id, item, user) => {
   return axios({
-    url: apiUrl + '/items/' + id,
+    url: apiUrl + '/item/' + id,
     method: 'PATCH',
     headers: {
       'Authorization': `Bearer ${user.token}`

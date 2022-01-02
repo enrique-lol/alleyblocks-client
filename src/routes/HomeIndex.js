@@ -14,7 +14,8 @@ class HomeIndex extends Component {
   componentDidMount () {
     const { msgAlert, user } = this.props
     homeIndex(user)
-      .then(res => this.setState({ items: res.data.items }))
+      // .then(res => console.log(res))
+      .then(res => this.setState({ items: res.data.item }))
       .catch(error => {
         msgAlert({
           heading: 'Error',
@@ -36,9 +37,10 @@ class HomeIndex extends Component {
 
   render () {
     const { items } = this.state
+
     if (!items) {
       return (
-        <p>404</p>
+        <p>!items</p>
       )
     }
     if (items.length === 0) {
@@ -56,7 +58,7 @@ class HomeIndex extends Component {
 
           <section className='bot-card'>
             <h3 className='roboto-mono thicc-letters'>{item.title}</h3>
-            <p>{item.authorName}</p>
+            <p>{item.artist}</p>
           </section>
         </item>
       </Link>

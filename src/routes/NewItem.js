@@ -23,7 +23,7 @@ class CreateItem extends Component {
     const { user, msgAlert } = this.props
     const { item } = this.state
     itemCreate(item, user)
-      .then(res => this.setState({ createdId: res.data.item.id }))
+      .then(res => this.setState({ createdId: res.data.item._id }))
       .then(msgAlert({
         heading: 'Success!',
         message: 'Your item has been created ',
@@ -48,7 +48,7 @@ class CreateItem extends Component {
     }
     return (
       <Fragment>
-        <h1>Submit New Item</h1>
+        <h1>New Item</h1>
         <ItemForm
           item={item}
           handleSubmit={this.handleSubmit}

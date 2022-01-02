@@ -27,7 +27,6 @@ const ItemForm = ({ item, handleSubmit, handleChange }) => (
       onChange={handleChange}
     />
     <input
-      required
       name="artCollection"
       type="text"
       placeholder="collection"
