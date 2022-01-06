@@ -8,14 +8,14 @@ class HomeIndex extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      items: null
+      item: null
     }
   }
   componentDidMount () {
     const { msgAlert, user } = this.props
     homeIndex(user)
-      // .then(res => console.log(res))
-      .then(res => this.setState({ items: res.data.item }))
+      // .then(res => console.log(res.data.item))
+      .then(res => this.setState({ item: res.data.item }))
       .catch(error => {
         msgAlert({
           heading: 'Error',
@@ -30,28 +30,28 @@ class HomeIndex extends Component {
       url: `${apiUrl}/second14`,
       method: 'GET'
     })
-      .then(res => this.setState({ items: [...this.state.items, res.data.items] }))
-      .then(() => console.log(`STATE: ${this.state.items}`))
+      .then(res => this.setState({ items: [...this.state.item, res.data.item] }))
+      .then(() => console.log(`STATE: ${this.state.item}`))
       .catch(console.error)
   }
 
   render () {
-    const { items } = this.state
+    const { item } = this.state
 
-    if (!items) {
+    if (!item) {
       return (
         <p>!items</p>
       )
     }
-    if (items.length === 0) {
+    if (item.length === 0) {
       return (
         <p>0 Items to show</p>
       )
     }
 
-    const itemsJsx = items.map(item => (
-      <Link to={`/items/${item.id}`} key={item.id}>
-        <item>
+    const itemsJsx = item.map(item => (
+      <Link to={`/item/${item._id}`} key={item._id}>
+        <article>
           <section className='top-card'>
             <img className='home-image' src={item.thumbnail}/>
           </section>
@@ -60,7 +60,7 @@ class HomeIndex extends Component {
             <h3 className='roboto-mono thicc-letters'>{item.title}</h3>
             <p>{item.artist}</p>
           </section>
-        </item>
+        </article>
       </Link>
     ))
 

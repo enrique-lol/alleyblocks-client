@@ -32,7 +32,7 @@ export const itemCreate = (item, user) => {
     data: { item }
   })
 }
-export const getItem = (id) => {
+export const viewItem = (id) => {
   return axios({
     url: apiUrl + '/item/' + id,
     method: 'GET'

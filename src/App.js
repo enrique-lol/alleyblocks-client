@@ -10,7 +10,7 @@ import SignUp from './components/SignUp/SignUp'
 import SignIn from './components/SignIn/SignIn'
 import SignOut from './components/SignOut/SignOut'
 import ChangePassword from './components/ChangePassword/ChangePassword'
-// import ViewItem from './routes/ViewItem.js'
+import ViewItem from './routes/ViewItem.js'
 import NewItem from './routes/NewItem.js'
 import HomeIndex from './routes/HomeIndex.js'
 // import UpdateItem from './routes/UpdateItem.js'
@@ -60,6 +60,9 @@ class App extends Component {
         <main className="container">
           <Route exact path='/' render={() => (
             <HomeIndex msgAlert={this.msgAlert} />
+          )} />
+          <Route exact path='/item/:id' render={() => (
+            <ViewItem msgAlert={this.msgAlert} />
           )} />
           <Route path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />

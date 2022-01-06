@@ -19,14 +19,16 @@ const unauthenticatedOptions = (
 
 const alwaysOptions = (
   <Fragment>
-    <Nav.Link href="#/">Home</Nav.Link>
+    <Nav.Link href="#/">Explore</Nav.Link>
+    <Nav.Link href="#/">Collections</Nav.Link>
+    <Nav.Link href="#/">About</Nav.Link>
   </Fragment>
 )
 
 const HeaderTwo = ({ user }) => (
-  <Navbar bg="dark" variant="dark">
+  <Navbar>
     <Container>
-      <Navbar.Brand href="#/">Navbar</Navbar.Brand>
+      <Navbar.Brand className="brand" href="#/">AlleyBlocks</Navbar.Brand>
       <Nav className="me-auto">
         { user && <span className="navbar-text mr-2">Welcome, {user.email}</span>}
         { alwaysOptions }
