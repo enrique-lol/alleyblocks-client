@@ -18,7 +18,9 @@ export const index14 = (user, loadCount) => {
   return axios({
     url: apiUrl + '/next14',
     method: 'GET',
-    data: { loadCount }
+    data: {
+      loadCount
+    }
   })
 }
 
@@ -29,7 +31,9 @@ export const itemCreate = (item, user) => {
     headers: {
       'Authorization': `Bearer ${user.token}`
     },
-    data: { item }
+    data: {
+      item
+    }
   })
 }
 export const viewItem = (id) => {
@@ -46,6 +50,8 @@ export const itemUpdate = (id, item, user) => {
     headers: {
       'Authorization': `Bearer ${user.token}`
     },
-    data: { item: item }
+    data: {
+      item: item
+    }
   })
 }

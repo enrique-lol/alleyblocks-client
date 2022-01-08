@@ -13,6 +13,8 @@ import ChangePassword from './components/ChangePassword/ChangePassword'
 import ViewItem from './routes/ViewItem.js'
 import NewItem from './routes/NewItem.js'
 import HomeIndex from './routes/HomeIndex.js'
+import CollectionsIndex from './routes/CollectionsIndex.js'
+import NewCollection from './routes/NewCollection.js'
 // import UpdateItem from './routes/UpdateItem.js'
 
 class App extends Component {
@@ -61,6 +63,9 @@ class App extends Component {
           <Route exact path='/' render={() => (
             <HomeIndex msgAlert={this.msgAlert} />
           )} />
+          <Route exact path='/collections' render={() => (
+            <CollectionsIndex msgAlert={this.msgAlert} />
+          )} />
           <Route exact path='/item/:id' render={() => (
             <ViewItem msgAlert={this.msgAlert} />
           )} />
@@ -78,6 +83,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} exact path='/new-item' render={() => (
             <NewItem msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/new-collection' render={() => (
+            <NewCollection msgAlert={this.msgAlert} user={user} />
           )} />
 
         </main>
