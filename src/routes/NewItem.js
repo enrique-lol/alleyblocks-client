@@ -10,7 +10,6 @@ class CreateItem extends Component {
       item: {
         title: '',
         artist: '',
-        artCollection: '',
         thumbnail: '',
         priceEther: ''
       },
