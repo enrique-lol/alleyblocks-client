@@ -4,7 +4,7 @@ import { collectionIndex } from '../api/collection-auth.js'
 import Card from 'react-bootstrap/Card'
 import apiUrl from '../apiConfig'
 import axios from 'axios'
-import HomeIndex from './../routes/HomeIndex.js'
+import ItemsInColl from './../routes/ItemsInColl.js'
 
 class CollectionIndex extends Component {
   constructor (props) {
@@ -56,7 +56,7 @@ class CollectionIndex extends Component {
         <Card>
           <h3>{coll.title}</h3>
           <p>Below, are items with CollectionID of {coll._id}</p>
-          < HomeIndex />
+          < ItemsInColl key={coll._id} />
         </Card>
       </Link>
     ))
@@ -70,7 +70,5 @@ class CollectionIndex extends Component {
     )
   }
 }
-
-// <button onClick={this.loadBatch}>Load More!</button>
 
 export default CollectionIndex
