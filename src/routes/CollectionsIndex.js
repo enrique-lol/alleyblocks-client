@@ -1,8 +1,10 @@
 import React, { Component, Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import { collectionIndex } from '../api/collection-auth.js'
+import Card from 'react-bootstrap/Card'
 import apiUrl from '../apiConfig'
 import axios from 'axios'
+import HomeIndex from './../routes/HomeIndex.js'
 
 class CollectionIndex extends Component {
   constructor (props) {
@@ -49,18 +51,13 @@ class CollectionIndex extends Component {
       )
     }
 
-    const collectionsJsx = collection.map(collection => (
-      <Link to={`/collection/${collection._id}`} key={collection._id}>
-        <article>
-          <section className='top-card'>
-            <img className='home-image' src={collection.thumbnail}/>
-          </section>
-
-          <section className='bot-card'>
-            <h3 className='roboto-mono thicc-letters'>{collection.title}</h3>
-            <p>{collection.artist}</p>
-          </section>
-        </article>
+    const collectionsJsx = collection.map(coll => (
+      <Link to={`/collection/${coll._id}`} key={coll._id}>
+        <Card>
+          <h3>{coll.title}</h3>
+          <p>Below, are items with CollectionID of {coll._id}</p>
+          < HomeIndex />
+        </Card>
       </Link>
     ))
 
