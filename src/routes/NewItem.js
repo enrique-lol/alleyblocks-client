@@ -11,7 +11,8 @@ class CreateItem extends Component {
         title: '',
         artist: '',
         thumbnail: '',
-        priceEther: ''
+        priceEther: '',
+        collectionId: ''
       },
       createdId: null
     }

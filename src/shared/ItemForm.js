@@ -34,6 +34,14 @@ const ItemForm = ({ item, handleSubmit, handleChange }) => (
       value={item.priceEther}
       onChange={handleChange}
     />
+    <input
+      required
+      name="collectionId"
+      type="text"
+      placeholder="Add Collection ID (opt)"
+      value={item.collectionId}
+      onChange={handleChange}
+    />
     <button type="submit">Submit</button>
   </form>
 )

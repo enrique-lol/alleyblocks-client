@@ -15,6 +15,7 @@ import NewItem from './routes/NewItem.js'
 import HomeIndex from './routes/HomeIndex.js'
 import CollectionsIndex from './routes/CollectionsIndex.js'
 import NewCollection from './routes/NewCollection.js'
+import ViewCollection from './routes/ViewCollection.js'
 // import UpdateItem from './routes/UpdateItem.js'
 
 class App extends Component {
@@ -68,6 +69,9 @@ class App extends Component {
           )} />
           <Route exact path='/item/:id' render={() => (
             <ViewItem msgAlert={this.msgAlert} />
+          )} />
+          <Route exact path='/collection/:id' render={() => (
+            <ViewCollection msgAlert={this.msgAlert} />
           )} />
           <Route path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
