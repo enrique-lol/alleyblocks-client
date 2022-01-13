@@ -45,9 +45,8 @@ export const viewItem = (id) => {
 
 export const itemsinColl = (id) => {
   return axios({
-    url: apiUrl + '/itemsincoll/',
-    method: 'GET',
-    data: { id }
+    url: apiUrl + '/itemsincoll/' + id,
+    method: 'GET'
   })
 }
 

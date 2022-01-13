@@ -12,16 +12,10 @@ class ItemsInColl extends Component {
     }
   }
   componentDidMount () {
-    const { match, msgAlert } = this.props
-    itemsinColl(match.params.id)
-      .then(res => this.setState({ items: res.data.items }))
-      .catch(error => {
-        msgAlert({
-          heading: 'Try Again',
-          message: 'ERROR: ' + error.message,
-          variant: 'danger'
-        })
-      })
+    const { id } = this.props
+    itemsinColl(id)
+    // .then(res => console.log(res))
+      .then(res => this.setState({ items: res.data.item }))
   }
   render () {
     let itemsJsx

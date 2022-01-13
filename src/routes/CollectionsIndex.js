@@ -56,7 +56,7 @@ class CollectionIndex extends Component {
         <Card>
           <h3>{coll.title}</h3>
           <p>Below, are items with CollectionID of {coll._id}</p>
-          < ItemsInColl key={coll._id} />
+          < ItemsInColl id={coll._id} />
         </Card>
       </Link>
     ))
