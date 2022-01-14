@@ -4,7 +4,6 @@ import { v4 as uuid } from 'uuid'
 
 import AuthenticatedRoute from './components/AuthenticatedRoute/AuthenticatedRoute'
 import AutoDismissAlert from './components/AutoDismissAlert/AutoDismissAlert'
-// import HeaderOne from './components/Header/HeaderOne'
 import HeaderTwo from './components/Header/HeaderTwo'
 import SignUp from './components/SignUp/SignUp'
 import SignIn from './components/SignIn/SignIn'
@@ -17,7 +16,8 @@ import CollectionsIndex from './routes/CollectionsIndex.js'
 import NewCollection from './routes/NewCollection.js'
 import ViewCollection from './routes/ViewCollection.js'
 import ItemsInColl from './routes/ItemsInColl.js'
-// import UpdateItem from './routes/UpdateItem.js'
+import UpdateItem from './routes/UpdateItem.js'
+import UpdateCollection from './routes/UpdateCollection.js'
 
 class App extends Component {
   constructor (props) {
@@ -94,6 +94,12 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} exact path='/new-collection' render={() => (
             <NewCollection msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/item/:id/update' render={() => (
+            <UpdateItem msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/collection/:id/update' render={() => (
+            <UpdateCollection msgAlert={this.msgAlert} user={user} />
           )} />
 
         </main>

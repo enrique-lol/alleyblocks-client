@@ -77,7 +77,7 @@ class ViewCollection extends Component {
         {deleted ? <Redirect to="/"/> : collectionJsx}
         {comments}
         <button className='a-button' onClick={this.deleteItem}>a1</button>
-        <button className='a-button'><Link to={`/collection/${collection.id}/update/`}>a2</Link></button>
+        <button className='a-button'><Link to={`/collection/${collection._id}/update/`}>a2</Link></button>
       </Fragment>
     )
   }

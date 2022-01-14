@@ -35,7 +35,6 @@ const ItemForm = ({ item, handleSubmit, handleChange }) => (
       onChange={handleChange}
     />
     <input
-      required
       name="collectionId"
       type="text"
       placeholder="Add Collection ID (opt)"

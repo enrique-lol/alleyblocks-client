@@ -52,13 +52,14 @@ class CollectionIndex extends Component {
     }
 
     const collectionsJsx = collection.map(coll => (
-      <Link to={`/collection/${coll._id}`} key={coll._id}>
-        <Card>
+      <Card key={coll._id}>
+        <Link to={`/collection/${coll._id}`}>
           <h3>{coll.title}</h3>
-          <p>Below, are items with CollectionID of {coll._id}</p>
-          < ItemsInColl id={coll._id} />
-        </Card>
-      </Link>
+        </Link>
+        <p>Below, are items with CollectionID of {coll._id}</p>
+        < ItemsInColl id={coll._id} />
+      </Card>
+
     ))
 
     return (

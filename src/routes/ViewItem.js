@@ -58,15 +58,6 @@ class ViewItem extends Component {
             <h2 className='roboto-mono'>{item.title}</h2>
             <img className='item-image' src={item.thumbnail}/>
             <p className='art-text'>By {item.authorName} on {item.publishDate} -- {item.intro}</p>
-            {item.img2 ? <img className='item-image' src={item.img2}/> : null }
-            {item.heading2 ? <h6 className='head-text'>{item.heading2}</h6> : null }
-            {item.paragraph2 ? <p className='art-text'>{item.paragraph2}</p> : null }
-            {item.img3 ? <img className='item-image' src={item.img3}/> : null }
-            {item.heading3 ? <h6 className='head-text'>{item.heading3}</h6> : null }
-            {item.paragraph3 ? <p className='art-text'>{item.paragraph3}</p> : null }
-            {item.img4 ? <img className='item-image' src={item.img4}/> : null }
-            {item.heading4 ? <h6 className='head-text'>{item.heading4}</h6> : null }
-            {item.paragraph4 ? <p className='art-text'>{item.paragraph4}</p> : null }
           </div>
 
         </Fragment>
@@ -81,7 +72,7 @@ class ViewItem extends Component {
           </div>
           < FutureFeature />
           <button className='a-button' onClick={this.deleteItem}>a1</button>
-          <button className='a-button'><Link to={`/item/${item.id}/update/`}>a2</Link></button>
+          <button className='a-button'><Link to={`/item/${item._id}/update`}>a2</Link></button>
         </div>
       </Fragment>
     )
