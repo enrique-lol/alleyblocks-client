@@ -1,11 +1,9 @@
 import React, { Fragment, Component } from 'react'
 import { withRouter, Redirect, Link } from 'react-router-dom'
-// import { Button } from 'react-bootstrap/'
 import apiUrl from '../apiConfig'
 import axios from 'axios'
 import { viewItem } from './../api/item-auth.js'
 import FutureFeature from './../components/FutureFeature/FutureFeature.js'
-
 class ViewItem extends Component {
   constructor (props) {
     super(props)
@@ -29,6 +27,7 @@ class ViewItem extends Component {
   }
   deleteItem = () => {
     const { user, match, msgAlert } = this.props
+    console.log(this.props)
     axios({
       url: `${apiUrl}/item/${match.params.id}`,
       method: 'delete',

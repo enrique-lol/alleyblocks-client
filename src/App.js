@@ -68,7 +68,7 @@ class App extends Component {
           <Route exact path='/collections' render={() => (
             <CollectionsIndex msgAlert={this.msgAlert} />
           )} />
-          <Route exact path='/item/:id' render={() => (
+          <Route user={user} exact path='/item/:id' render={() => (
             <ViewItem msgAlert={this.msgAlert} />
           )} />
           <Route exact path='/collection/:id' render={() => (
